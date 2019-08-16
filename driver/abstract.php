@@ -58,6 +58,9 @@ abstract class BaseDriver
         sort($allTables);
 
         foreach ($allTables as $v) {
+            if(defined('TABLES_TO_IGNORE') && in_array($v, explode(',', TABLES_TO_IGNORE))) {
+                continue;
+            }
             $allFields = array_unique(array_merge(array_keys((array)@$fArray[$v]), array_keys((array)@$sArray[$v])));
             foreach ($allFields as $f) {
                 switch (true) {

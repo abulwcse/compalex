@@ -28,6 +28,10 @@ $requiredParams = array(
     'DATABASE_DESCRIPTION_SECONDARY',
 );
 
+$optionalParams = array(
+    'TABLES_TO_IGNORE',
+);
+
 array_map(function ($name) use ($params) {
     if (!isset($params[$name])) {
         die('Param ' . $name . ' not set in file ' . ENVIRONMENT_FILE);
@@ -35,6 +39,13 @@ array_map(function ($name) use ($params) {
         define($name, $params[$name]);
     }
 }, $requiredParams);
+
+
+array_map(function ($name) use ($params) {
+    if (isset($params[$name])) {
+        define($name, $params[$name]);
+    }
+}, $optionalParams);
 
 define('FIRST_DSN',  DATABASE_DRIVER.'://'.DATABASE_USER.':'.DATABASE_PASSWORD.'@'.DATABASE_HOST.':'.DATABASE_PORT.'/'.DATABASE_NAME);
 define('SECOND_DSN',  DATABASE_DRIVER.'://'.DATABASE_USER_SECONDARY.':'.DATABASE_PASSWORD_SECONDARY.'@'.DATABASE_HOST_SECONDARY.':'.DATABASE_PORT_SECONDARY.'/'.DATABASE_NAME_SECONDARY);
