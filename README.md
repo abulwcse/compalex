@@ -10,15 +10,15 @@ Try [demo](http://demo.compalex.net/) or visit [http://compalex.net/](http://com
 Compalex is only supported by PHP 5.4 and up with PDO extension.
 
 ## Installation
-	$ git clone https://github.com/dlevsha/compalex.git
+	$ git clone https://github.com/abulwcse/compalex.git
 	$ cd compalex
 	
 Open `.environment`. You'll see configuration params
 
 ```ini
 [ Main settings ]
-; Possible DATABASE_DRIVER: 'mysql', 'pgsql', 'dblib'.
-; Please use 'dblib' for Microsoft SQL Server
+; Possible DATABASE_DRIVER: 'mysql', 'pgsql', 'dblib', 'sqlsrv'.
+; Please use 'sqlsrv' for Microsoft SQL Server
 DATABASE_DRIVER = mysql
 DATABASE_ENCODING = utf8
 SAMPLE_DATA_LENGTH = 100
