@@ -22,6 +22,7 @@ Open `.environment`. You'll see configuration params
 DATABASE_DRIVER = mysql
 DATABASE_ENCODING = utf8
 SAMPLE_DATA_LENGTH = 100
+TABLES_TO_IGNORE = IgnoredTable1,IgnoredTable2,IgnoredTable3,IgnoredTable4
 
 [ Primary connection params ]
 DATABASE_HOST = localhost
